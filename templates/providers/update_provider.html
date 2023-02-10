@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Creation of Providers
+{% endblock %}
+
+{% block content %}
+    <h1>Hello from the update of Providers!!</h1>
+
+    {% if form %}
+        <form action="" method="POST">
+        
+        {% csrf_token %}
+
+            <table>
+                {{form.as_table}}
+            </table>
+
+
+
+            <input type="submit" value="Update provider">
+        </form>
+    {% endif %}
+
+    {% if form_errors %}
+        <h2 style="color: red">¡ERROR!</h2>
+        {{form_errors}}
+    {% endif %}
+
+    {% if message %}
+    <h2 style="color:green ">{{message}}</h2>
+    {% endif %}
+{% endblock %}

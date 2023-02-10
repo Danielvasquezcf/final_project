@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+CROSSFIT SHOP!
+{% endblock %}
+
+{% block content %}
+<div class="p-3 mb-2 bg-primary text-dark">
+    <h1> <p class="text-center">Welcome to the Crossfit Shop!!</p></h1>
+</div>
+<h2> <p class="text-center">Surely you are wondering, who are we?</p></h2>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Crossfit Shop!</h1>
+      <p class="lead">A unique and exclusive space for lovers of the world of fitness and Crossfit, in this store you can find the best in sportswear. We strive day after day to bring you the best so that your training is even more comfortable, and in terms of comfort and good looks, there is no other like us!
+        We work together with Reebok, Nike, Rogue and Nobull to bring you only the best of the best.
+        From here at Crossfit Shop we wish you a great wod!!</p>
+    </div>
+  </div>
+
+    {% if message %}
+        <h2>{{message}}</h2>
+    {% endif %}
+{% endblock %}   

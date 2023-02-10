@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+   Sign up
+{% endblock %}
+
+{% block content %}
+    <h1>Enter your information to sign up</h1>
+
+
+    {% if form %}
+        <form action="" method="POST">
+        
+        {% csrf_token %}
+
+            <table>
+                {{form.as_table}}
+            </table>
+        
+            <input type="submit" value="Log in">
+        </form>
+    {% endif %}
+
+    
+    {% if errors %}
+         {{errors}}
+    {% endif %}
+
+{% endblock %}

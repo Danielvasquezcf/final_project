@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+ Providers List
+{% endblock %}
+{% block content %}
+
+  
+    <h1>Hello from your providers list!!</h1>
+    {% if request.user.is_authenticated %}
+      {% if request.user.is_superuser %}
+      <h2>Create a new Provider</h2> <a href="/providers/create-provider/" class="btn btn-primary">Create!</a>
+      {% endif %}
+    {% endif %}
+    {% for provider in object_list %}
+      {% if provider.image %}
+        <div class="card" style="width: 18rem;">
+        <img src="{{provider.image.url}}" class="card-img-top" alt="...">
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">{{provider.name}}</h5>
+        <p class="card-text">Direction: {{provider.address}}</p>
+        <p class="card-text">Phone: {{provider.phone_number}}</p>
+        <a href="/providers/update-provider/{{provider.id}}" class="btn btn-primary">Update</a>
+        <a href="/providers/delete-provider/{{provider.id}}" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+    {% endfor %}
+
+    {% endblock %}
